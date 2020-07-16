@@ -60,7 +60,16 @@
   },
     methods: {
       validate () {
+        // Check if the form's inputs are ready.
         this.$refs.form.validate()
+
+        // If yes, place the API call
+        if (this.valid === true){
+          // INSER API CALL HERE TO VALDIDATE USER
+          fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json))
+        }
       },
     }
 }
