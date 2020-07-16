@@ -1,19 +1,17 @@
 <template>
   <v-app>
-    <router-link to="/about">Go to Bar</router-link>
-    <HelloWorld />
-    <router-view></router-view>
+    <LoginForm />
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import LoginForm from '@/components/LoginForm';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    LoginForm,
   },
 
   data: () => ({
