@@ -10,7 +10,7 @@
     </v-row>
 
     <v-row>
-      <v-btn>Get started</v-btn>
+      <v-btn class="text-teal-200">Get started</v-btn>
     </v-row>
     </v-container>
   </v-form>
