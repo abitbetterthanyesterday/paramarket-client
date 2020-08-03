@@ -54,7 +54,7 @@ export default {
             console.log('logged in');
          })
          .then(() => {
-          this.$router.push('/about');
+          // this.$router.push('/home');
          })
          .catch((e) => {
           console.error('Authentication error', e);
