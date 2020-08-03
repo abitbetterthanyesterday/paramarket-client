@@ -1,17 +1,15 @@
 <template>
   <v-app>
-    <LoginForm />
+    <h1>App</h1>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import LoginForm from '@/components/LoginForm';
-
 export default {
   name: 'App',
 
   components: {
-    LoginForm,
   },
 
   data: () => ({
