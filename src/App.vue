@@ -1,19 +1,31 @@
 <template>
-  <v-app>
-    <h1>App</h1>
-    <router-view></router-view>
+  <v-app id="app">
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {
-  },
+  components: {},
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
+
+<style lang="scss">
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+.fade-leave-active {
+  transition: opacity 0.1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
