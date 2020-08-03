@@ -16,6 +16,7 @@
     "feathers-hooks-common": "^5.0.3",
     "feathers-vuex": "^3.11.5",
     "socket.io-client": "^2.3.0",
+    "tailwindcss": "^1.6.1",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vue-typed-js": "^0.1.2",

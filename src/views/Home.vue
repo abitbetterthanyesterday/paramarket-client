@@ -1,39 +1,21 @@
 <template>
   <v-form>
     <v-container>
-      <v-row>
-        <div id="typed-strings">
-  <p>Typed.js is a <strong>JavaScript</strong> library.</p>
-  <p>It <em>types</em> out sentences.</p>
-</div>
-<span id="typed"></span>
-        <v-col cols="12">
-          <v-text-field
-            v-model="message"
-            outlined
-            clearable
-            :label=this.searchAnimation
-            type="text"
-          >
-            <template v-slot:append>
-              <v-fade-transition leave-absolute>
-                <v-progress-circular
-                  v-if="loading"
-                  size="24"
-                  color="info"
-                  indeterminate
-                ></v-progress-circular>
-                <img v-else width="24" height="24" src="https://cdn.vuetifyjs.com/images/logos/v-alt.svg" alt="">
-              </v-fade-transition>
-            </template>
-          </v-text-field>
-        </v-col>
 
-      </v-row>
+      <h2>No matter what you're looking for, we've got you covered!</h2>
+      <v-row>
+        <vue-typed-js :strings="['Advance Success 4', 'a square reserve', 'an EN-A Glider', 'a new vario', 'a lightweight mountain glider']" :shuffle="true" :backDelay="100" :backSpeed="100" :showCursor="true" :loop="true">
+          <h1> I'm looking for <span class="typing"></span></h1>
+      </vue-typed-js>
+    </v-row>
+
+    <v-row>
+      <v-btn>Get started</v-btn>
+    </v-row>
     </v-container>
   </v-form>
 </template>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> 
 <script>
 // @ is an alias to /src
 
@@ -42,6 +24,10 @@ export default {
   components: {
   },
   mounted(){
+    var typed = new Typed('#type', {
+  strings: ["First sentence.", "Second sentence."],
+  typeSpeed: 30
+});
 
   },
   data(){
