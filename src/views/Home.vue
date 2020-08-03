@@ -1,16 +1,26 @@
 <template>
   <v-form>
     <v-container>
-
-      <h2>No matter what you're looking for, we've got you covered!</h2>
       <v-row>
+        <v-col cols=12>
+          <h1 class='text-h1'>Paramarket</h1>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12">
+          <h2 class='text-h4'>No matter what you're looking for, we've got you covered!</h2>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols=12 d-flex justify-center>
         <vue-typed-js :strings="['Advance Success 4', 'a square reserve', 'an EN-A Glider', 'a new vario', 'a lightweight mountain glider']" :shuffle="true" :backDelay="100" :backSpeed="100" :showCursor="true" :loop="true">
           <h1> I'm looking for <span class="typing"></span></h1>
       </vue-typed-js>
+    </v-col>
     </v-row>
 
     <v-row>
-      <v-btn class="text-teal-200">Get started</v-btn>
+      <v-btn>Get started</v-btn>
     </v-row>
     </v-container>
   </v-form>
