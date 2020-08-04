@@ -1,28 +1,50 @@
 <template>
   <div>
     <v-card class="flex-grow-1 flex-shrink-1 ma-4" elevation="12">
-        <v-carousel height= "250px"           hide-delimiter-background
-    show-arrows-on-hover>
-    <v-carousel-item
-      v-for="(image,i) in images"
-      :key="i"
-      :src="image.src"
-
-
-    ></v-carousel-item>
-  </v-carousel>
+      <v-carousel height="250px" hide-delimiter-background show-arrows-on-hover>
+        <v-carousel-item
+          v-for="(image, i) in images"
+          :key="i"
+          :src="image.src"
+          class="relative"
+        >
+          <v-tooltip v-model="show" bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-chip
+                v-bind="attrs"
+                v-on="on"
+                v-if="certified == 1"
+                class="ma-2 absolute"
+                color="green"
+                text-color="white"
+              >
+                <v-avatar left>
+                  <v-icon>mdi-check-circle</v-icon>
+                </v-avatar>
+                Certified
+              </v-chip>
+            </template>
+            <span>This wing has been controlled by a professional.</span>
+          </v-tooltip>
+        </v-carousel-item>
+      </v-carousel>
       <v-card-title class="py-3">Ozone, Mojo - 25</v-card-title>
-      <v-card-text class="text--primary">
-        <div class="pb-1"><v-icon class='mr-2'>mdi-scale</v-icon>70 - 90 kg</div>
-        <div class="pb-1"><v-icon class='mr-2'>mdi-calendar</v-icon>2019</div>
-        <div class="pb-1"><v-icon class='mr-2'>mdi-clock-outline</v-icon>200 hours</div>
-        <div class="pb-1"><v-icon class='mr-2'>mdi-currency-usd</v-icon>2000 euros</div>
-        <div class="pb-1"><v-icon class='mr-2'>mdi-shape</v-icon>EN-C</div>
-        <div class="pb-1"><v-icon class='mr-2'>mdi-map-marker</v-icon>France, Doussard</div>
+      <v-card-text class="text--primary relative">
         <div class="pb-1">
-         <v-icon class="mr-2">{{ certified? 'mdi-check':'mdi-alert'}}</v-icon>{{ certified? 'Certified':'Not Certified'}}
+          <v-icon class="mr-2">mdi-scale</v-icon>70 - 90 kg
         </div>
-<!--         <div class='ml-2 pb-2'>Condition:</div>
+        <div class="pb-1"><v-icon class="mr-2">mdi-calendar</v-icon>2019</div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-clock-outline</v-icon>200 hours
+        </div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-currency-usd</v-icon>2000 euros
+        </div>
+        <div class="pb-1"><v-icon class="mr-2">mdi-shape</v-icon>EN-C</div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-map-marker</v-icon>France, Doussard
+        </div>
+        <!--         <div class='ml-2 pb-2'>Condition:</div>
         <div class="d-flex justify-space-around">
           <v-icon :style = "[ (condition == 1)?{border: '3px solid forestgreen', color: 'forestgreen', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-cool-outline</v-icon
           ><v-icon :style = "[ (condition == 2)?{border: '3px solid green', color: 'green', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-excited-outline</v-icon
@@ -47,26 +69,37 @@
 
 <script>
 export default {
-  props:['condition', 'isCertified'],
+  props: ["condition", "certified"],
   data() {
     return {
       isFavorite: false,
-          images: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
-        ],
+      images: [
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg"
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+        }
+      ]
     };
   },
   method: {}
 };
 </script>
+
+<style scoped lang="scss">
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</style>

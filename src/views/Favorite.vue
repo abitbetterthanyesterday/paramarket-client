@@ -3,6 +3,10 @@
     <h1>Favorites</h1>
     <v-container class="grid" fluid>
       <WingAdCard certified="0" condition="1" />
+      <WingAdCard certified="0" condition="2" />
+      <WingAdCard certified="1" condition="5" />
+      <WingAdCard certified="0" condition="3" />
+      <WingAdCard certified="1" condition="5" />
     </v-container>
   </div>
 </template>

@@ -66,16 +66,6 @@
         </v-row>
       </div>
     </v-container>
-    <v-footer id="footer">
-      <v-spacer></v-spacer>
-      <div class="black--text text--lighten-5 overline">
-        Paramarket &copy; 2020 - Made on <v-icon>mdi-weather-rainy</v-icon> days
-        by
-        <a href="https://www.aloys.dev" target="_blank" class="red--text">
-          Alo
-        </a>
-      </div>
-    </v-footer>
   </section>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
@@ -187,27 +177,6 @@ export default {
 
     * {
       margin: 0;
-    }
-  }
-}
-
-#footer {
-  margin: 0;
-  padding: 0;
-  padding-right: 1em;
-  opacity: 0.2;
-  transition: all 0.3s ease-in-out;
-
-  a {
-    text-decoration: none;
-  }
-
-  &:hover {
-    opacity: 0.9;
-    transition: all 0.3s ease-in-out;
-
-    a:hover {
-      text-decoration: underline;
     }
   }
 }
