@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
+#app{
+  overflow: auto;
+}
 .fade-enter-active {
   transition: opacity 0.5s;
 }
