@@ -1,21 +1,84 @@
 <template>
-  <div class="dashboard">
-    <h1>Favorites</h1>
-    <v-container class="grid" fluid>
-      <WingAdCard certified="0" condition="1" />
-      <WingAdCard certified="0" condition="2" />
-      <WingAdCard certified="1" condition="5" />
-      <WingAdCard certified="0" condition="3" />
-      <WingAdCard certified="1" condition="5" />
-    </v-container>
-  </div>
+  <layout-default>
+    <div class="dashboard pa-4">
+      <h1 class="text-h3">Favorites</h1>
+      <h2 class="text-subtitle-1">Find all your favorite ads save here.</h2>
+      <v-container class="grid" fluid>
+        <WingAdCard
+          v-for="wing in dummyData"
+          :key="wing.year"
+          :brand="wing.brand"
+          :model="wing.model"
+          :year="wing.year"
+          :hours="wing.hours"
+          :price="wing.price"
+          :weigthRangeMin="wing.weightRangeMin"
+          :weigthRangeMax="wing.weightRangeMax"
+          :category="wing.category"
+          :country="wing.country"
+          :town="wing.town"
+          :certified="wing.certified"
+          :condition="wing.condition"
+        />
+      </v-container>
+    </div>
+  </layout-default>
 </template>
 
 <script>
+import LayoutDefault from "@/layout/LayoutDefault";
 import WingAdCard from "@/components/WingAdCard";
 
 export default {
-  components: { WingAdCard }
+  components: { LayoutDefault, WingAdCard },
+  data() {
+    return {
+      dummyData: [
+        {
+          brand: "Gin",
+          model: "Sprint 3",
+          year: "2017",
+          hours: "50",
+          price: "1500",
+          weightRangeMin:75,
+          weightRangeMax:95,
+          category: "EN-B",
+          country: "England",
+          town: "London",
+          certified: "1",
+          condition: "1"
+        },
+        {
+          brand: "Ozone",
+          model: "Enzo 3",
+          year: "2019",
+          hours: "450",
+          price: "800",
+          weightRangeMin: "75",
+          weightRangeMax: "95",
+          category: "EN-CCC",
+          country: "France",
+          town: "Doussard",
+          certified: "0",
+          condition: "1"
+        },
+        {
+          brand: "Gin",
+          model: "Sprint 3",
+          year: "2017",
+          hours: "50",
+          price: "1500",
+          weightRangeMin: "75",
+          weightRangeMax: "95",
+          category: "EN-B",
+          country: "England",
+          town: "London",
+          certified: "0",
+          condition: "1"
+        }
+      ]
+    };
+  }
 };
 </script>
 

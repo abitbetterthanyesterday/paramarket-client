@@ -28,21 +28,33 @@
           </v-tooltip>
         </v-carousel-item>
       </v-carousel>
-      <v-card-title class="py-3">Ozone, Mojo - 25</v-card-title>
+      <v-card-title class="py-3"
+        >{{ brand }}, {{ model }} <v-spacer></v-spacer
+        ><v-btn icon class="d-flex" @click="isFavorite = !isFavorite">
+          <v-icon class="font-weight-bold red--text">{{
+            this.isFavorite ? "mdi-heart" : "mdi-heart-outline"
+          }}</v-icon>
+        </v-btn></v-card-title
+      >
       <v-card-text class="text--primary relative">
         <div class="pb-1">
-          <v-icon class="mr-2">mdi-scale</v-icon>70 - 90 kg
-        </div>
-        <div class="pb-1"><v-icon class="mr-2">mdi-calendar</v-icon>2019</div>
-        <div class="pb-1">
-          <v-icon class="mr-2">mdi-clock-outline</v-icon>200 hours
+          <v-icon class="mr-2">mdi-scale</v-icon>{{ weigthRangeMin }} -
+          {{ weigthRangeMax }} kg
         </div>
         <div class="pb-1">
-          <v-icon class="mr-2">mdi-currency-usd</v-icon>2000 euros
+          <v-icon class="mr-2">mdi-calendar</v-icon>{{ year }}
         </div>
-        <div class="pb-1"><v-icon class="mr-2">mdi-shape</v-icon>EN-C</div>
         <div class="pb-1">
-          <v-icon class="mr-2">mdi-map-marker</v-icon>France, Doussard
+          <v-icon class="mr-2">mdi-clock-outline</v-icon>{{ hours }} hours
+        </div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-currency-usd</v-icon>{{ price }} euros
+        </div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-shape</v-icon>{{ category }}
+        </div>
+        <div class="pb-1">
+          <v-icon class="mr-2">mdi-map-marker</v-icon>{{ country }}, {{ town }}
         </div>
         <!--         <div class='ml-2 pb-2'>Condition:</div>
         <div class="d-flex justify-space-around">
@@ -53,14 +65,9 @@
           ><v-icon :style = "[ (condition == 5)?{border: '3px solid red', color: 'red', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-dead-outline</v-icon>
         </div> -->
       </v-card-text>
-      <v-card-actions class="pa-5 pt-0 d-flex justify-space-between">
+      <v-card-actions class="pa-5 pt-0 d-flex justify-center">
         <v-btn color="primary">
-          Contact seller
-        </v-btn>
-        <v-btn icon class="d-flex" @click="isFavorite = !isFavorite">
-          <v-icon class="font-weight-bold red--text">{{
-            this.isFavorite ? "mdi-heart" : "mdi-heart-outline"
-          }}</v-icon>
+          <v-icon class="mr-2">mdi-book-search-outline</v-icon> More information
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -69,7 +76,20 @@
 
 <script>
 export default {
-  props: ["condition", "certified"],
+  props: [
+    "brand",
+    "model",
+    "weigthRangeMin",
+    "weigthRangeMax",
+    "year",
+    "hours",
+    "price",
+    "category",
+    "country",
+    "town",
+    "condition",
+    "certified"
+  ],
   data() {
     return {
       isFavorite: false,

@@ -1,17 +1,37 @@
 <template>
-  <div class="dashboard">
-    <h1>Favorites</h1>
-    <v-container class="grid" fluid>
-      <WingAdCard certified="0" condition="1" />
-    </v-container>
-  </div>
+  <layout-default>
+    <div class="dashboard pa-4">
+      <h1 class="text-h3">Welcome back, Aloys.</h1>
+      <div class="container" fluid>
+        <h3 class="text-h4">Wings</h3>
+        <v-row class="grid">
+          <v-skeleton-loader
+            class="flex-grow-1 flex-shrink-1 ma-4"
+            elevation="12"
+            ref="skeleton"
+            type="card, list-item-three-line, list-item-line, list-item-two-line@2, actions"
+          ></v-skeleton-loader>
+          <WingAdCard certified="0" condition="1" />
+          <WingAdCard certified="0" condition="1" />
+          <WingAdCard certified="0" condition="1" />
+        </v-row>
+        <h3 class="text-h4">Harness</h3>
+        <v-row class="grid">
+          <WingAdCard certified="0" condition="1" />
+          <WingAdCard certified="0" condition="1" />
+          <WingAdCard certified="0" condition="1" />
+        </v-row>
+      </div>
+    </div>
+  </layout-default>
 </template>
 
 <script>
+import LayoutDefault from "@/layout/LayoutDefault";
 import WingAdCard from "@/components/WingAdCard";
 
 export default {
-  components: { WingAdCard }
+  components: { LayoutDefault, WingAdCard }
 };
 </script>
 

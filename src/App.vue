@@ -1,52 +1,6 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/dashboard"
-              ><v-list-item-title>Home</v-list-item-title></router-link
-            >
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-heart</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/Favorite"
-              ><v-list-item-title class="blue-grey--text text--darken-4"
-                >Favorite</v-list-item-title
-              ></router-link
-            >
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-app-bar app color="orange" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Paramarket</v-toolbar-title>
-    </v-app-bar>
-
-    <v-main>
-      <v-container class="fill-height main__container ma-0 pa-0" fluid>
-        <router-view></router-view>
-      </v-container>
-    </v-main>
-    <v-footer id="footer" app>
-      <v-spacer></v-spacer>
-      <div class="black--text text--lighten-5 overline" color="orange">
-        Paramarket &copy; 2020 - Made on <v-icon>mdi-weather-rainy</v-icon> days
-        by
-        <a href="https://www.aloys.dev" target="_blank" class="red--text">
-          Alo
-        </a>
-      </div>
-    </v-footer>
+  <v-app class="App">
+    <router-view></router-view>
   </v-app>
 </template>
 
@@ -92,7 +46,7 @@ export default {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.v-list-item__content {
+.v-list {
   a {
     text-decoration: none;
   }
