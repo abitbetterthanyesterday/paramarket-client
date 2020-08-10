@@ -4,22 +4,28 @@
       <h1 class="text-h3">Favorites</h1>
       <h2 class="text-subtitle-1">Find all your favorite ads save here.</h2>
       <v-container class="grid" fluid>
-        <WingAdCard
+        <v-skeleton-loader
           v-for="wing in dummyData"
           :key="wing.year"
-          :brand="wing.brand"
-          :model="wing.model"
-          :year="wing.year"
-          :hours="wing.hours"
-          :price="wing.price"
-          :weigthRangeMin="wing.weightRangeMin"
-          :weigthRangeMax="wing.weightRangeMax"
-          :category="wing.category"
-          :country="wing.country"
-          :town="wing.town"
-          :certified="wing.certified"
-          :condition="wing.condition"
-        />
+          class="flex-grow-1 flex-shrink-1 ma-4"
+          elevation="12"
+          ref="skeleton"
+          type="card, list-item-three-line, list-item-line, list-item-two-line@2, actions"
+        >
+          <WingAdCard
+            :brand="wing.brand"
+            :model="wing.model"
+            :year="wing.year"
+            :hours="wing.hours"
+            :price="wing.price"
+            :weigthRangeMin="wing.weightRangeMin"
+            :weigthRangeMax="wing.weightRangeMax"
+            :category="wing.category"
+            :country="wing.country"
+            :town="wing.town"
+            :certified="wing.certified"
+            :condition="wing.condition"
+        /></v-skeleton-loader>
       </v-container>
     </div>
   </layout-default>

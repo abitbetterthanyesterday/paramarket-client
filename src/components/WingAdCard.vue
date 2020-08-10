@@ -28,7 +28,7 @@
           </v-tooltip>
         </v-carousel-item>
       </v-carousel>
-      <v-card-title class="py-3"
+      <v-card-title class="py-3 orange accent-3 white--text"
         >{{ brand }}, {{ model }} <v-spacer></v-spacer
         ><v-btn icon class="d-flex" @click="isFavorite = !isFavorite">
           <v-icon class="font-weight-bold red--text">{{
@@ -51,9 +51,9 @@
           <v-icon left>mdi-text</v-icon>
         </v-tab>
         <!--         <v-tab>
-          Map
-          <v-icon left>mdi-map-marker</v-icon>
-        </v-tab> -->
+            Map
+            <v-icon left>mdi-map-marker</v-icon>
+          </v-tab> -->
 
         <v-tab-item>
           <v-card-text class="text--primary relative">
@@ -78,13 +78,13 @@
               {{ town }}
             </div>
             <!--         <div class='ml-2 pb-2'>Condition:</div>
-        <div class="d-flex justify-space-around">
-          <v-icon :style = "[ (condition == 1)?{border: '3px solid forestgreen', color: 'forestgreen', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-cool-outline</v-icon
-          ><v-icon :style = "[ (condition == 2)?{border: '3px solid green', color: 'green', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-excited-outline</v-icon
-          ><v-icon :style = "[ (condition == 3)?{border: '3px solid gold', color: 'gold', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-happy-outline</v-icon
-          ><v-icon :style = "[ (condition == 4)?{border: '3px solid orange', color: 'orange', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-neutral-outline</v-icon
-          ><v-icon :style = "[ (condition == 5)?{border: '3px solid red', color: 'red', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-dead-outline</v-icon>
-        </div> -->
+          <div class="d-flex justify-space-around">
+            <v-icon :style = "[ (condition == 1)?{border: '3px solid forestgreen', color: 'forestgreen', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-cool-outline</v-icon
+            ><v-icon :style = "[ (condition == 2)?{border: '3px solid green', color: 'green', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-excited-outline</v-icon
+            ><v-icon :style = "[ (condition == 3)?{border: '3px solid gold', color: 'gold', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-happy-outline</v-icon
+            ><v-icon :style = "[ (condition == 4)?{border: '3px solid orange', color: 'orange', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-neutral-outline</v-icon
+            ><v-icon :style = "[ (condition == 5)?{border: '3px solid red', color: 'red', borderRadius: '50%', padding: '2px'}:{} ]">mdi-emoticon-dead-outline</v-icon>
+          </div> -->
           </v-card-text>
         </v-tab-item>
 
@@ -100,16 +100,16 @@
           </v-card-text>
         </v-tab-item>
         <!--         <v-tab-item>
-          <v-card-text class="text--primary relative">
-            <h3 class="h5">Available soon!</h3>
-            <h4 class="subtitle-2">We're working on it.</h4>
-            <v-skeleton-loader
-              class="mx-auto"
-              max-width="300"
-              type="image"
-            ></v-skeleton-loader>
-          </v-card-text>
-        </v-tab-item> -->
+            <v-card-text class="text--primary relative">
+              <h3 class="h5">Available soon!</h3>
+              <h4 class="subtitle-2">We're working on it.</h4>
+              <v-skeleton-loader
+                class="mx-auto"
+                max-width="300"
+                type="image"
+              ></v-skeleton-loader>
+            </v-card-text>
+          </v-tab-item> -->
       </v-tabs>
       <v-card-actions class="pa-5 pt-0 d-flex justify-center">
         <v-btn color="primary">
