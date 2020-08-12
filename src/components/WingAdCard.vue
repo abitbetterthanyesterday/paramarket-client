@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     toggleFavorite(ad) {
-      this.$axios
+      axios
         .delete(`localhost:3030/user-favorite-ads/${ad}`)
         .then(res => {
           this.isFavorite = false;
