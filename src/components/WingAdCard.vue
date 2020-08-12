@@ -8,7 +8,7 @@
           :src="image.src"
           class="relative"
         >
-          <v-tooltip v-model="show" bottom>
+          <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
               <v-chip
                 v-bind="attrs"
@@ -30,7 +30,7 @@
       </v-carousel>
       <v-card-title class="py-3"
         >{{ brand }}, {{ model }} <v-spacer></v-spacer
-        ><v-btn icon class="d-flex" @click="isFavorite = !isFavorite">
+        ><v-btn icon class="d-flex" @click="toggleFavorite(id)">
           <v-icon class="font-weight-bold red--text">{{
             this.isFavorite ? "mdi-heart" : "mdi-heart-outline"
           }}</v-icon>
@@ -77,6 +77,7 @@
 <script>
 export default {
   props: [
+    "id",
     "brand",
     "model",
     "weigthRangeMin",
@@ -92,7 +93,7 @@ export default {
   ],
   data() {
     return {
-      isFavorite: false,
+      isFavorite: true,
       images: [
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
@@ -109,7 +110,17 @@ export default {
       ]
     };
   },
-  method: {}
+  methods: {
+    toggleFavorite(ad) {
+      this.$axios
+        .delete(`localhost:3030/user-favorite-ads/${ad}`)
+        .then(res => {
+          this.isFavorite = false;
+          console.log(res);
+        })
+        .catch(err => console.log(err, "error"));
+    }
+  }
 };
 </script>
 

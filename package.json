@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service lint serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -12,6 +12,7 @@
     "@feathersjs/feathers": "^4.5.7",
     "@feathersjs/socketio-client": "^4.5.7",
     "@vue/composition-api": "^1.0.0-beta.6",
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "feathers-hooks-common": "^5.0.3",
     "feathers-vuex": "^3.11.5",

@@ -6,7 +6,8 @@
       <v-container class="grid" fluid>
         <WingAdCard
           v-for="wing in dummyData"
-          :key="wing.year"
+          :key="wing.id"
+          :id="wing.id"
           :brand="wing.brand"
           :model="wing.model"
           :year="wing.year"
@@ -35,13 +36,14 @@ export default {
     return {
       dummyData: [
         {
+          id: 1,
           brand: "Gin",
           model: "Sprint 3",
           year: "2017",
           hours: "50",
           price: "1500",
-          weightRangeMin:75,
-          weightRangeMax:95,
+          weightRangeMin: 75,
+          weightRangeMax: 95,
           category: "EN-B",
           country: "England",
           town: "London",
@@ -49,6 +51,7 @@ export default {
           condition: "1"
         },
         {
+          id: 2,
           brand: "Ozone",
           model: "Enzo 3",
           year: "2019",
@@ -63,6 +66,7 @@ export default {
           condition: "1"
         },
         {
+          id: 3,
           brand: "Gin",
           model: "Sprint 3",
           year: "2017",
