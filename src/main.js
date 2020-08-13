@@ -3,12 +3,15 @@ import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import store from "./store";
 import router from "./router";
+
 import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 //Typed js for main page.
 import VueTypedJs from "vue-typed-js";
-
 Vue.use(VueTypedJs);
+
 Vue.config.productionTip = false;
 
 new Vue({

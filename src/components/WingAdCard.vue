@@ -94,6 +94,7 @@ export default {
   data() {
     return {
       isFavorite: true,
+      deletedFavorite: [],
       images: [
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
@@ -112,13 +113,14 @@ export default {
   },
   methods: {
     toggleFavorite(ad) {
-      axios
-        .delete(`localhost:3030/user-favorite-ads/${ad}`)
-        .then(res => {
-          this.isFavorite = false;
-          console.log(res);
-        })
-        .catch(err => console.log(err, "error"));
+      // this.axios
+      // .delete(`http://127.0.0.1:3030/user-favorite-ads/${ad}`)
+      // .then(() => {
+      this.isFavorite = false;
+      this.deletedFavorite.push(ad);
+      });
+      // })
+      // .catch(err => console.log(err, "error"));
     }
   }
 };
