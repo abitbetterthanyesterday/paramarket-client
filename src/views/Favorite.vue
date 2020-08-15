@@ -4,7 +4,7 @@
       <h1 class="text-h3">Favorites</h1>
       <h2 class="text-subtitle-1">Find all your favorite ads save here.</h2>
       <v-container class="grid" fluid>
-        <WingAdCard
+        <v-skeleton-loader
           v-for="wing in dummyData"
           :key="wing.id"
           :id="wing.id"
