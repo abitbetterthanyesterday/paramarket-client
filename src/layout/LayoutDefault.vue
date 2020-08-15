@@ -1,6 +1,12 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      fixed
+      :permanent="!$vuetify.breakpoint.xsOnly"
+      expand-on-hover="true"
+    >
       <v-list dense>
         <router-link to="/dashboard">
           <v-list-item link>
@@ -8,9 +14,7 @@
               <v-icon>mdi-home</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="blue-grey--text text--darken-4"
-                >Home</v-list-item-title
-              >
+              <v-list-item-title class="button">Home</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -20,9 +24,7 @@
               <v-icon>mdi-magnify</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="blue-grey--text text--darken-4"
-                >Search</v-list-item-title
-              >
+              <v-list-item-title class="button">Search</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -32,9 +34,7 @@
               <v-icon>mdi-heart</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="blue-grey--text text--darken-4"
-                >Favorite</v-list-item-title
-              >
+              <v-list-item-title class="button">Favorite</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -44,9 +44,7 @@
               <v-icon>mdi-post</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="blue-grey--text text--darken-4"
-                >Sell</v-list-item-title
-              >
+              <v-list-item-title class="button">Sell</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -56,9 +54,7 @@
               <v-icon>mdi-account-circle</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="blue-grey--text text--darken-4"
-                >My account</v-list-item-title
-              >
+              <v-list-item-title class="button">My account</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
@@ -66,7 +62,10 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="orange" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="d-block d-sm-none"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4"
         >Paramarket</v-toolbar-title
       >
@@ -130,6 +129,12 @@ export default {
 .v-list {
   a {
     text-decoration: none;
+  }
+
+  .v-list-item__title {
+    font-size: 0.875rem !important;
+    letter-spacing: 0.078125rem !important;
+    text-transform: uppercase;
   }
 }
 
